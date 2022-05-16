@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 @Getter
 public class User {
 
@@ -24,7 +24,7 @@ public class User {
     @Column(name = "tel")
     private String tel;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private List<Order> orders = new ArrayList<Order>();
 
 }
