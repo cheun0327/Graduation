@@ -1,6 +1,7 @@
 package hufs.graduation.paper.controller;
 
 import hufs.graduation.paper.dto.UserDTO;
+import hufs.graduation.paper.dto.UserDetailDTO;
 import hufs.graduation.paper.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -28,7 +29,7 @@ public class UserController {
     }
 
     @GetMapping("/user/detail/{userId}")
-    public ResponseEntity<UserDTO> getUserDetail(@PathVariable("userId") int userId) {
+    public ResponseEntity<UserDetailDTO> getUserDetail(@PathVariable("userId") int userId) {
         try {
             return ResponseEntity.ok(userService.getUserDetail(userId));
         } catch(Exception e) {

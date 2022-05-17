@@ -6,9 +6,8 @@ import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
-public class UserDTO {
+public class ProductDTO {
     private int id;
-    private String name;
-    private String password;
-    private String tel;
+    private String product_name;
+    private String price;
 }
