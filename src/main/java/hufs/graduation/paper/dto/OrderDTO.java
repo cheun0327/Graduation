@@ -11,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 public class OrderDTO {
     private int id;
-    private int order_user_id;
-    private String order_date;
-    private List<OrderProductDTO> products;
+    private int orderUserId;
+    private String orderDate;
+    private List<Integer> productId;
 }

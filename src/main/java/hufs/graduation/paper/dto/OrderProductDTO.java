@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class OrderProductDTO {
     private int id;
-    private int order_id;
-    private int item_id;
+    private int orderId;
+    private int itemId;
     private int count;
 }

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.websocket.server.PathParam;
 import java.util.List;
 
 @RestController
@@ -28,8 +29,18 @@ public class UserController {
         }
     }
 
-    @GetMapping("/user/detail/{userId}")
-    public ResponseEntity<UserDetailDTO> getUserDetail(@PathVariable("userId") int userId) {
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<UserDTO> getUser(@PathVariable("userId") Integer userId) {
+        try {
+            return ResponseEntity.ok(userService.getUser(userId));
+        } catch(Exception e) {
+            e.printStackTrace();
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("/user/order/{userId}")
+    public ResponseEntity<UserDetailDTO> getUserDetail(@PathVariable("userId") Integer userId) {
         try {
             return ResponseEntity.ok(userService.getUserDetail(userId));
         } catch(Exception e) {
