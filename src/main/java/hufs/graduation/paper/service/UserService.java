@@ -44,8 +44,9 @@ public class UserService {
                 user.getName(),
                 user.getPassword(),
                 user.getTel(),
-                orders.stream().map(
-                        o -> o.getOrderProducts().stream().map(op -> op.getProduct().getId())).collect(Collectors.toList())
+                orders
+//                orders.stream().map(
+//                        o -> o.getOrderProducts().stream().map(op -> op.getProduct().getId())).collect(Collectors.toList())
 //                                new OrderDTO(o.getId(), o.getUser().getId(), o.getOrderDate(),
 //                                o.getOrderProducts().stream().map(
 //                                        op -> new OrderProductDTO(op.getId(), op.getOrder().getId(), op.getProduct().getId(), op.getCount())

@@ -1,5 +1,6 @@
 package hufs.graduation.paper.dto;
 
+import hufs.graduation.paper.entity.Order;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -12,5 +13,5 @@ public class UserDetailDTO {
     private String name;
     private String password;
     private String tel;
-    private List<OrderDTO> orderIds;
+    private List<Order> orderIds;
 }

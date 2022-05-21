@@ -24,7 +24,7 @@ public class User {
     @Column(name = "tel")
     private String tel;
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private List<Order> orders = new ArrayList<Order>();
 
 }
