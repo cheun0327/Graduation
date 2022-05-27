@@ -28,6 +28,14 @@ public class UserController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+    @GetMapping("/user/orders")
+    public void getUsersOrders() {
+        try {
+            userService.getUsersOrders();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     @GetMapping("/user/{userId}")
     public ResponseEntity<UserDTO> getUser(@PathVariable("userId") Integer userId) {

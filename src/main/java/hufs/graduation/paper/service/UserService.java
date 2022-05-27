@@ -27,6 +27,17 @@ public class UserService {
                 .collect(Collectors.toList());
     }
 
+    public void getUsersOrders() {
+        List<User> users = userRepository.findAll();
+
+        System.out.println("========= findAll done ========");
+
+        for (User user : users) {
+            System.out.println(user.getOrders());
+            System.out.println("========= user" + user.getId() + "========");
+        }
+    }
+
     public UserDTO getUser(Integer userId) {
         User user = userRepository.findById(userId).orElseThrow();
 

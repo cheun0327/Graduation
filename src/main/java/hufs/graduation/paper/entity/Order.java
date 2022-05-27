@@ -1,6 +1,7 @@
 package hufs.graduation.paper.entity;
 
 import lombok.Getter;
+import org.hibernate.annotations.BatchSize;
 
 import javax.persistence.*;
 import java.util.ArrayList;

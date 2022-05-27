@@ -1,6 +1,7 @@
 package hufs.graduation.paper.entity;
 
 import lombok.Getter;
+import org.hibernate.annotations.BatchSize;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -25,6 +26,8 @@ public class User {
     private String tel;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
+    @BatchSize(size = 10)
     private List<Order> orders = new ArrayList<Order>();
 
 }
+
